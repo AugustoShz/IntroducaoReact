@@ -1,10 +1,10 @@
 import React from "react";
 
 function Button(props){
-    const { btnText, onClick } = props;
+    const { btnText, onClick, disabled } = props;
 
     return(
-    <button onClick = { onClick }>{ btnText }</button>
+    <button onClick = { onClick } disabled={ disabled }>{ btnText }</button>
     )
 }
 

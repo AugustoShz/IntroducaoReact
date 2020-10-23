@@ -8,12 +8,24 @@ class App extends Component {
     super(props);
 
     this.state = {
-      count: 1,
-
+      count: 0,
+      disabled: false
     }
   }
 
-  addCont = () => {
+  componentDidMount(){
+    window.setTimeout(()=>{
+      this.setState({
+        disabled: true
+      })
+    }, 3000)
+  }
+
+  componentDidUpdate(){
+    console.log("Updated Value");
+  }
+
+  addCont = (valor) => {
     const { count } = this.state
 
     this.setState({
@@ -22,12 +34,12 @@ class App extends Component {
   }
 
   render() {
-    const { count } = this.state
+    const { count, disabled} = this.state
 
     return(
     <div>
       <h1>{ count }</h1>
-      <Button btnText="Curioso" onClick ={ this.addCont }></Button>
+      <Button btnText="Curioso" onClick ={ this.addCont } disabled = { disabled }></Button>
     </div>
     )
   }
