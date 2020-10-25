@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import './styles.css';
-import Button from "./Button";
+import MyButton from "./Button";
 
 const App = () => {
   const [ count, setCount ] = useState(0);
@@ -13,7 +13,7 @@ const App = () => {
   return(
     <div>
       <h1>{count}</h1>
-      <Button btnText = "Teste" onClick = {()=>{setCount(count+1)}}/>
+      <MyButton onClick = {()=>{setCount(count+1)}} btnText = "Teste"/>
     </div>
   )
 }

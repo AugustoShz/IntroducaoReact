@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Button from '@material-ui/core/Button';
 
-class Button extends Component {
+class MyButton extends Component {
 	constructor(props) {
 		super(props);
 		this.props = props;
@@ -26,10 +27,10 @@ class Button extends Component {
 		const { disabled } = this.state;
 
 		return (
-			<button onClick={onClick} disabled={disabled}>{btnText}</button>
+			<Button onClick = {onClick} color="primary" variant="contained" disabled = {disabled}>{btnText}</Button>
 		)
 	}
 
 }
 
-export default Button;
+export default MyButton;
